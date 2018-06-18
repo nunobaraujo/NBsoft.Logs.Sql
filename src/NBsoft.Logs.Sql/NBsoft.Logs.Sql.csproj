@@ -2,11 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
+    <Authors>nunobaraujo</Authors>
+    <Company>nbsoft.pt</Company>
+    <Description>SQL Logger Library for .NET Standard</Description>
+    <Copyright>© 2018 Nuno Benjamim Salgado Alves de Araújo</Copyright>
+    <PackageLicenseUrl>https://github.com/nunobaraujo/NBsoft.Logs/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/nunobaraujo/NBsoft.Logs.</PackageProjectUrl>
+    <PackageIconUrl>http://nbsoft.pt/V1/favicon.ico</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NBsoft.Logs" Version="1.0.2" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.4.2" />
+    <PackageReference Include="NBsoft.Logs" Version="1.0.4" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.0" />
   </ItemGroup>
 
 </Project>
