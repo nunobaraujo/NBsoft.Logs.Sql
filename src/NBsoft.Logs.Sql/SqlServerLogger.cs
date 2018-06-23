@@ -117,7 +117,7 @@ namespace NBsoft.Logs.Sql
         {
             semapore.Wait();
             try { _logCache.Add(item); }
-            catch { semapore.Release(); }
+            finally { semapore.Release(); }
             if (_logCache.Count >= _cacheMaxEntries)
                 SaveCache();
         }
