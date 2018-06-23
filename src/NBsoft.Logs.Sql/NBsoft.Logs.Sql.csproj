@@ -9,7 +9,7 @@
     <Description>SQL Logger Library for .NET Standard</Description>
     <Copyright>© 2018 Nuno Benjamim Salgado Alves de Araújo</Copyright>
     <PackageLicenseUrl>https://github.com/nunobaraujo/NBsoft.Logs/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/nunobaraujo/NBsoft.Logs.</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/nunobaraujo/NBsoft.Logs.Sql</PackageProjectUrl>
     <PackageIconUrl>http://nbsoft.pt/V1/favicon.ico</PackageIconUrl>
   </PropertyGroup>
 
