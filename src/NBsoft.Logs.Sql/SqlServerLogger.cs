@@ -213,13 +213,13 @@ namespace NBsoft.Logs.Sql
         {
             return WriteLogAsync(LogType.Warning, component, process, context, message, null, null, dateTime);
         }
-        public Task WriteErrorAsync(string component, string process, string context, Exception exception, DateTime? dateTime = default(DateTime?))
+        public Task WriteErrorAsync(string component, string process, string context, string message, Exception exception, DateTime? dateTime = default(DateTime?))
         {
-            return WriteLogAsync(LogType.Error, component, process, context, exception.Message, exception.GetBaseException().StackTrace, exception.GetBaseException().GetType().ToString(), dateTime);
+            return WriteLogAsync(LogType.Error, component, process, context, $"{message} - {exception.Message}", exception.GetBaseException().StackTrace, exception.GetBaseException().GetType().ToString(), dateTime);
         }
-        public Task WriteFatalErrorAsync(string component, string process, string context, Exception exception, DateTime? dateTime = default(DateTime?))
+        public Task WriteFatalErrorAsync(string component, string process, string context, string message, Exception exception, DateTime? dateTime = default(DateTime?))
         {
-            return WriteLogAsync(LogType.FatalError, component, process, context, exception.Message, exception.GetBaseException().StackTrace, exception.GetBaseException().GetType().ToString(), dateTime);
+            return WriteLogAsync(LogType.FatalError, component, process, context, $"{message} - {exception.Message}", exception.GetBaseException().StackTrace, exception.GetBaseException().GetType().ToString(), dateTime);
         }
 
         public void WriteLog(ILogItem item)
@@ -234,13 +234,13 @@ namespace NBsoft.Logs.Sql
         {
             WriteLog(LogType.Warning, component, process, context, message, null, null, dateTime);
         }
-        public void WriteError(string component, string process, string context, Exception exception, DateTime? dateTime = null)
+        public void WriteError(string component, string process, string context, string message, Exception exception, DateTime? dateTime = null)
         {
-            WriteLog(LogType.Error, component, process, context, exception.Message, exception.GetBaseException().StackTrace, exception.GetBaseException().GetType().ToString(), dateTime);
+            WriteLog(LogType.Error, component, process, context, $"{message} - {exception.Message}", exception.GetBaseException().StackTrace, exception.GetBaseException().GetType().ToString(), dateTime);
         }
-        public void WriteFatalError(string component, string process, string context, Exception exception, DateTime? dateTime = null)
+        public void WriteFatalError(string component, string process, string context, string message, Exception exception, DateTime? dateTime = null)
         {
-            WriteLog(LogType.FatalError, component, process, context, exception.Message, exception.GetBaseException().StackTrace, exception.GetBaseException().GetType().ToString(), dateTime);
+            WriteLog(LogType.FatalError, component, process, context, $"{message} - {exception.Message}", exception.GetBaseException().StackTrace, exception.GetBaseException().GetType().ToString(), dateTime);
         }
 
         public void Dispose()
