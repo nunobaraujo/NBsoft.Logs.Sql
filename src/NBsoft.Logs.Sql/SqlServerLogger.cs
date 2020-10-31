@@ -1,5 +1,4 @@
-﻿using NBsoft.Logs.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SqlClient;
